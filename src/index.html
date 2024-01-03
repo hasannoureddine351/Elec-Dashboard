@@ -1,12 +1,115 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="minimum-scale=0.5">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="styles\index.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>Admin Dashboard</h1>
+  </header>
+
+  <div class="contentContainer">
+
+    <aside>
+      <nav>
+        <a href="index.html">
+          <i class="fas fa-home"></i> Home
+        </a>
+        <a href="pages\users.html">
+          <i class="fas fa-users"></i> Users
+        </a>
+        <a href="pages\servers.html">
+          <i class="fas fa-server"></i> Servers
+        </a>
+        <a href="pages\accounts.html">
+          <i class="fas fa-wallet"></i> Accounts
+        </a>
+      </nav>
+    </aside>
+
+
+    <main id="dashboard">
+
+      <section class="page">
+        <div id="polar-chart" class="chart"><canvas id="myPolarAreaChart"></canvas></div>
+        <div id="info-log" class="chart ">
+          <p>Activity Log</p>
+          <table id="log-table">
+            <thead>
+              <tr>
+                <th>Message</th>
+                <th>Action</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sample Message 1</td>
+                <td><button>View</button></td>
+                <td>001</td>
+              </tr>
+              <tr>
+                <td>Sample Message 2</td>
+                <td><button>View</button></td>
+                <td>002</td>
+              </tr>
+              <!-- More rows can be added here -->
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <section class="page">
+        <div id="kpi" class="chart">
+          <p>KeyTrends</p>
+          <table id="kpi-table">
+            <thead>
+              <tr>
+                <th>KPI</th>
+                <th>Current Value</th>
+                <th>Trend</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Active VPN Accounts</td>
+                <td>560</td>
+                <td><span class="trend-positive">+15%</span></td>
+              </tr>
+              <tr>
+                <td>New Sign-ups (This Month)</td>
+                <td>72</td>
+                <td><span class="trend-positive">+25%</span></td>
+              </tr>
+              <tr>
+                <td>Server Uptime (Last 24 Hrs)</td>
+                <td>99.8%</td>
+                <td><span class="trend-neutral">Stable</span></td>
+              </tr>
+              <!-- More KPIs can be added here -->
+            </tbody>
+          </table>
+        </div>
+        <div id="line-chart" class="chart"><canvas id="myLineChart"></canvas></div>
+
+      </section>
+
+    </main>
+
+
+
+  </div>
+  <script type="module" src="js/visuals.js"></script>
+</body>
+
 </html>

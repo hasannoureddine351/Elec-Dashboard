@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="minimum-scale=0.5">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/index.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Admin Panel</h1>
+    </header>
+
+    <div class="contentContainer">
+        <aside>
+            <nav>
+                <a href="..\index.html">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="users.html">
+                    <i class="fas fa-users"></i> Users
+                </a>
+                <a href="servers.html">
+                    <i class="fas fa-server"></i> Servers
+                </a>
+                <a href="accounts.html">
+                    <i class="fas fa-wallet"></i> Accounts
+                </a>
+            </nav>
+        </aside>
+
+        <div class="admin-panel">
+
+
+            <!-- Accounts Section -->
+            <div class="admin-section">
+                <h2>Accounts</h2>
+                <div>
+                    <input type="text" id="newAccountName" placeholder="Name">
+                    <input type="password" id="newAccountPass" placeholder="Pass">
+                    <input type="text" id="newAccountPrice" placeholder="Price">
+                    <input type="text" id="newAccountUser" placeholder="User">
+                    <input type="text" id="newAccountServer" placeholder="Server">
+                    <input type="date" id="newAccountStart" placeholder="Start">
+                    <input type="date" id="newAccountEnd" placeholder="End">
+                    <button id="addAccountButton"><i class="fa fa-plus" aria-hidden="true"></i> Add Account</button>
+                    <button id="clearAccountButton">Clear Accounts</button>
+                </div>
+            </div>
+        </div>
+        <div class="display-list">
+            <div class="filter-container">
+                <input type="text" name="filter" id="filterAccountName" placeholder="Filter...">
+
+
+            </div>
+            <ul class="data-list-column" id="accountList">
+                <!-- User data will be dynamically added here -->
+            </ul>
+
+
+            <div id="overlay" class="overlay">
+                <div class="overlay-content">
+                    <strong>
+                        <p>Are you sure you want to proceed?</p>
+                    </strong>
+                    <div class="buttons">
+                        <button id="yesButton">Yes</button>
+                        <button id="noButton">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="viewOverlay" class="overlay">
+        <div id="overlayContent">
+            <table></table>
+        </div>
+    </div>
+    <div class="notification-messages" id="notification-messages"></div>
+    <script src="../js/accounts.js"></script>
+</body>
+
+</html>

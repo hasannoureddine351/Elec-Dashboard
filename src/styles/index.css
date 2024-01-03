@@ -1,0 +1,586 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans&family=Quicksand&display=swap");
+
+/* Sidebar Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f1faee;
+}
+
+header {
+  background-color: #20283e;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.contentContainer {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+aside {
+  width: 200px;
+  background-color: #20283e;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  border-top: solid 2px #f1faee;
+}
+
+.display-list {
+  overflow: auto;
+}
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav a i {
+  margin-right: 10px;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* Admin Panel Styles */
+.admin-panel {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.admin-section {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.admin-section h2 {
+  text-align: center;
+}
+
+.data-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(10, 1fr); /* 10 rows */
+  gap: 10px; /* Adjust the gap between cards */
+  padding: 10px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin-left: 16px;
+}
+.data-list-column {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* 3 columns */
+  grid-template-rows: repeat(10, 1fr); /* 10 rows */
+  gap: 10px; /* Adjust the gap between cards */
+  padding: 20px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin-left: 16px;
+}
+
+.data-list li button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="date"],
+input[type="password"] {
+  padding: 10px;
+  margin: 5px;
+  transition: all 0.5s;
+}
+input[type="text"]:hover,
+input[type="submit"]:hover,
+input[type="password"]:hover {
+  width: 75%;
+  transition: all 0.5s;
+}
+
+.remove-btn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+/* Style for the buttons */
+#addUserButton,
+#addAccountButton,
+#addServerButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+.removeUserButton,
+.removeAccountButton,
+.removeServerButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  background-color: #ff0044;
+  color: #fff;
+}
+#noButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  background-color: #7e7e7e;
+  color: #fff;
+}
+.editUserButton,
+.editAccountButton,
+.editServerButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  background-color: #ff9d00;
+  color: #fff;
+}
+
+.activeAccountButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  background-color: #7700ff;
+  color: #fff;
+}
+#yesButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  background-color: #7e7e7e;
+  color: #fff;
+}
+#clearUserButton,
+#clearAccountButton,
+#clearServerButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: 8px;
+  cursor: pointer;
+  background-color: #7700ff;
+  color: #fff;
+}
+
+button:first-child {
+  margin-right: 8px;
+}
+
+/* Aligning the buttons */
+button {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Adjusting button size */
+input,
+button {
+  width: 150px;
+  /* You can adjust the width as needed */
+}
+
+.userCard,
+.serverCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  flex: 1;
+}
+.accountCard {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  flex: 1;
+}
+
+.userCard p,
+.serverCard p,
+.accountCard p {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.userCard button,
+.serverCard button,
+.accountCard button {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.userCard button:hover,
+.serverCard button:hover,
+.accountCard button:hover {
+  background-color: #bfbfbf;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: flex-end;
+  /* Add other styling properties for the image container */
+}
+
+.profilePicture {
+  width: 150px; /* Adjust size as needed */
+  height: 150px; /* Adjust size as needed */
+  /* Add other styling properties for the image */
+  margin-bottom: 1.4rem;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: space-between;
+  /* Add other styling properties for the buttons container */
+}
+
+.notification-messages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Stack messages from the bottom */
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: 100%; /* Ensure it spans the width for center alignment */
+}
+
+.notification-message {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.error-message {
+  background-color: #ff6347;
+  color: white;
+}
+
+.success-message {
+  background-color: #4caf50;
+  color: white;
+}
+
+.show {
+  opacity: 1;
+}
+
+.filter-container {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 100%;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.overlay-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+#viewOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+#overlayContent {
+  background-color: #fff;
+  padding: 40px 90px 40px 90px;
+  border-radius: 5px;
+  text-align: center;
+  list-style: none;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
+
+.buttons button {
+  margin: 0 10px;
+}
+
+.closeButton {
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-left: 8px;
+  background-color: #ff0044;
+  color: #fff;
+}
+
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom-table th {
+  color: white;
+  font-weight: bold;
+}
+.custom-table th,
+.custom-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
+.custom-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  height: 2rem;
+}
+
+.custom-table th {
+  flex: 1;
+  font-weight: bold;
+  background-color: #ff0044;
+}
+
+#dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px; /* Adjust padding as needed */
+  width: 100%;
+  background-color: rgb(240, 240, 240);
+}
+
+.page {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.chart {
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px; /* Adjust as needed for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adjust the shadow as desired */
+}
+
+/* CSS for Info Log */
+
+.info-log {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 15%;
+  padding: 10px;
+  margin: 4px;
+  border: solid #a68b4058;
+}
+
+.info-log p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: "Quicksand";
+  background-color: #20283e;
+  color: white;
+  padding: 10px;
+}
+.KPI p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: "Quicksand";
+  background-color: #20283e;
+  color: white;
+  padding: 10px;
+  width: 95%;
+}
+
+/* Basic Custom Table Styling */
+
+#log-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#log-table th,
+#log-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+#log-table td {
+  font-weight: bold;
+}
+
+#log-table th {
+  background-color: #20283e;
+  color: white;
+}
+
+#log-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Example styles for the action buttons */
+#log-table button {
+  padding: 6px 12px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#log-table button:hover {
+  background-color: #2980b9;
+}
+
+#kpi {
+  display: flex;
+  flex-direction: column;
+  flex: 0.75;
+  width: 30%;
+  padding: 10px;
+  margin: 4px;
+  border: solid #a68b4058;
+}
+
+/* Basic KPI Table Styling */
+
+#kpi-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#kpi-table th,
+#kpi-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+#kpi-table th {
+  background-color: #20283e;
+  color: white;
+}
+
+#kpi-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.trend-positive {
+  color: #28a745;
+}
+
+.trend-negative {
+  color: #dc3545;
+}
+
+.trend-neutral {
+  color: #6c757d;
+}
+
+/* For large screens larger than laptops */
+@media screen and (min-width: 1200px) {
+}
+
+/* For medium screens (laptops and tablets) */
+@media screen and (max-width: 1199px) {
+}
